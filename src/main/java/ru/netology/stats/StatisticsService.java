@@ -45,12 +45,7 @@ public class StatisticsService {
     }
 
     public long monthBelowAverage(long[] purchases) {
-        long monthCount = purchases.length;
-        long sum = 0;
-        for (long purchase : purchases) {
-          sum += purchase;
-        }
-        long average = sum/monthCount;
+        long average = monthAverage(purchases);
         long monthBelow = 0;
         for (long purchase : purchases) {
            if (purchase < average) {
@@ -62,12 +57,7 @@ public class StatisticsService {
 
 
     public long monthAboveAverage(long[] purchases) {
-        long monthCount = purchases.length;
-        long sum = 0;
-        for (long purchase : purchases) {
-            sum += purchase;
-        }
-        long average = sum/monthCount;
+        long average = monthAverage(purchases);
         long monthAbove = 0;
         for (long purchase : purchases) {
             if (purchase > average) {
