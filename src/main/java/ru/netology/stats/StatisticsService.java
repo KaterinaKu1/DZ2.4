@@ -12,11 +12,7 @@ public class StatisticsService {
 
   public long monthAverage(long[] purchases) {
       long monthCount = purchases.length;
-      long sum = 0;
-      for (long purchase : purchases) {
-        // аналог sum = sum + purchase;
-        sum += purchase;
-      }
+      long sum = calculateSum(purchases);
       return sum/monthCount;
     }
 
